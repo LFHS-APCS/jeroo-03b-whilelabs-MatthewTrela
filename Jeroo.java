@@ -77,7 +77,16 @@ public class Jeroo extends JerooBase {
      * The Jeroo should stop as soon as there is a net in front of it.       
      */
     public void meander() {
-
+      while (!isNet(AHEAD)) {
+        while (isFlower(AHEAD)) {
+          pick();
+          hop();
+          pick();
+        }
+        while (isClear(AHEAD)) {
+          turn(LEFT);
+        }
+      }
     }
 
     // Do NOT touch the code below here
