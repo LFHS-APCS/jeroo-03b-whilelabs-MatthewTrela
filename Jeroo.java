@@ -34,11 +34,12 @@ public class Jeroo extends JerooBase {
     public void clearFlowersToWater() 
     {
         while (!isWater(AHEAD)) //Step 2: Use the opposite of Step 1's result as the <test>
-        {
-           hop();
+        { 
            pick();
+           hop();
             // Step 3:  Make progress towards the goal inside the loop 
         }
+        pick();
         // Step 1:  At the end of the while loop, what should be true?
         
     }
@@ -81,12 +82,12 @@ public class Jeroo extends JerooBase {
         while (isFlower(AHEAD)) {
           pick();
           hop();
-          pick();
         }
         while (isClear(AHEAD)) {
           turn(LEFT);
         }
       }
+      pick();
     }
 
     // Do NOT touch the code below here
